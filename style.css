@@ -1,0 +1,398 @@
+:root {
+    /* --test--border: 1px solid red; */
+    --text--color: #fff;
+    --background--color: #DB1E3F; /* màu chủ đạo của trang web "#DB1E3F" */ /* đổi mã màu để xem kết quả*/
+    --background--color--hover: #ff4f4f; /* màu khi hover vào nút bất và bất cứ thứ gì mình hover chuột vào "#ff4f4f" */
+    --text--color--hover: #333;
+}
+.bx:hover {
+    cursor: pointer;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+body {
+    user-select: none;
+}
+.container {
+    border: var(--test--border);
+    width: 100%;
+    height: 100%;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 30px 0.2fr 0.8fr 70rem 50px;
+    grid-template-areas: "header header header"
+                        "nav nav nav"
+                        "banner banner banner"
+                        "content content content"
+                        "footer footer footer";
+}
+/* header start */
+
+.header {
+    border: var(--test--border);
+    background-color: var(--background--color);
+    color: var(--text--color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    grid-area: header;
+}
+.item_follows {
+    display: flex;
+    float: right
+}
+.item_follows i {
+    padding: 0 5px;
+    vertical-align: middle;
+}
+/* header end */
+
+/* nav start */
+.nav {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between; 
+    border: var(--test--border);
+    grid-area: nav;
+    z-index: 1;
+}
+.nav .image_nav {
+    display: flex;
+    align-items: center;
+    width: auto;
+    border: var(--test--border);
+}
+.nav .nav_menu {
+    width: auto;
+    display: flex;
+    align-items: center;
+    border: var(--test--border);
+}
+
+
+/* Hình ảnh */
+.nav .image_nav img {
+    width: 150px;
+}
+/* /// */
+
+.nav .nav_menu .nav_list {
+    border: var(--test--border);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+.nav .nav_menu .nav_list li {
+    list-style: none;
+    padding: 12px;
+    border-bottom: 1px solid #fff;  
+}
+
+.nav .nav_menu .nav_list li a {
+    text-decoration: none;
+    color: #3a2e2e;
+    text-transform: uppercase;
+}
+.nav .nav_menu .nav_list li:hover {
+    border-bottom: 1px solid var(--background--color--hover);
+}
+
+/* drop menu gioi thieu - start*/
+.gioithieu {
+    position: relative;
+}
+.drop_menu-gioithieu {
+    display: none;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 260px;
+    background-color: #fff;
+    box-shadow: 5px 5px 10px #333;
+    border-radius: 5px;
+    padding: 5px 0;
+}
+.gioithieu:hover .drop_menu-gioithieu {
+    display: block;
+}
+.drop_menu-gioithieu li:hover {
+    border-left: 4px solid var(--background--color--hover);
+}
+/* drop menu gioi thieu - end*/
+
+/* drop menu cao dang chinh quy - start*/
+.caodangchinhquy {
+    position: relative;
+}
+.drop_menu-cdchinhquy {
+    display: none;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 260px;
+    background-color: #fff;
+    box-shadow: 5px 5px 10px #333;
+    border-radius: 5px;
+    padding: 5px 0;
+}
+.caodangchinhquy:hover .drop_menu-cdchinhquy {
+    display: block;
+}
+.drop_menu-cdchinhquy li:hover {
+    border-left: 4px solid var(--background--color--hover);
+}
+/* drop menu cao dang chinh quy - end */
+
+/* drop menu cao dang 9+ - start */
+.caodang9 {
+    position: relative;
+}
+.drop_menu-caodang9 {
+    display: none;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 290px;
+    background-color: #fff;
+    box-shadow: 5px 5px 10px #333;
+    border-radius: 5px;
+    padding: 5px 0;
+}
+.caodang9:hover .drop_menu-caodang9 {
+    display: block;
+}
+.drop_menu-caodang9 li:hover {
+    border-left: 4px solid var(--background--color--hover);
+}
+/* drop menu cao dang 9+ - end */
+
+/* drop menu chuyen nganh - start */
+.chuyennganh {
+    position: relative;
+}
+.drop_menu-chuyennganh {
+    display: none;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 260px;
+    background-color: #fff;
+    box-shadow: 5px 5px 10px #333;
+    border-radius: 5px;
+    padding: 5px 0;
+}
+.chuyennganh:hover .drop_menu-chuyennganh {
+    display: block;
+}
+.drop_menu-chuyennganh li:hover {
+    border-left: 4px solid var(--background--color--hover);
+}
+/* drop menu chuyen nganh - end */
+
+.input {
+    padding: 5px;
+    padding-left: 10px;
+    border-radius: 20px;
+}
+.btnn {         /* nút đăng ký */
+    background-color: var(--background--color);
+    margin: 0px 20px;
+    border-radius: 10px;
+    border: none;
+    padding: 7px 30px;
+    color: var(--text--color);
+}
+.btnn:hover {
+    background-color: var(--background--color--hover);
+    color: var(--text--color--hover);
+}
+/* nav end */
+
+/* banner start */
+.banner {
+    border: var(--test--border);
+    grid-area: banner;
+    position: relative;
+}
+.banner img {
+    width: 100%;
+}
+.banner p {
+    font-family: 'Arial Narrow Bold';
+    color: var(--background--color);
+    font-size: 2.6rem;
+    font-weight: 700;
+    position: absolute;
+    top: 140px;
+    left: 90px;
+}
+.banner .span_banner {
+    font-family: 'Great Vibes', cursive;
+    color: #082a5e;
+    font-size: 2.5rem;
+    position: absolute;
+    top: 200px;
+    left: 95px;
+}
+.banner_dangkyngay-a {
+    background-color: var(--background--color);
+    box-shadow: 2px 4px 10px grey;
+    border-radius: 10px;
+    color: var(--text--color);
+    text-decoration: none;
+    padding: 10px;
+    position: absolute;
+    top: 380px;
+    left: 100px;
+}
+.banner_dangkyngay-a i {
+    vertical-align: middle;
+}
+.banner_dangkyngay-a:hover {
+    background-color: var(--background--color--hover);
+    color: #333;
+}
+/* banner end */
+
+/* main start */
+.main {
+    border: var(--test--border);
+    grid-area: content;
+}
+.content {
+    margin-bottom: 80px;
+}
+.main .content span {
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: 'Arial Narrow Bold';
+}
+.content_box {
+    display: flex;
+    justify-content: space-between;
+}
+.content_box1, .content_box2, .content_box3 {
+    position: relative;
+    border: var(--test--border);
+    border-radius: 10px;
+    width: 33%;
+    height: 280px;
+}
+.content_box1 {
+    background-image: url(https://caodangvietmyhanoi.edu.vn/images/products/cat/resized/cao-dang-chinh-quy-cao-dang-viet-my-3-_1652781844.jpg);
+    background-size: cover;
+}
+.content_box1 a {
+    position: absolute;
+    bottom: 2px;
+    left: 93px;
+    text-decoration: none;
+    padding: 13px 40px;
+    color: var(--background--color);
+    background-color: var(--text--color);
+    border: 1px solid red;
+    border-radius: 10px;
+}
+.content_box1 a:hover {
+    background-color: var(--background--color--hover);
+    color: var(--text--color);
+    transition: all 0.2s;
+}
+.content_box2 {
+    background-image: url(https://caodangvietmyhanoi.edu.vn/images/products/cat/resized/1_1649751685.jpg);
+    background-size: cover;
+}
+.content_box2 a {
+    position: absolute;
+    bottom: 2px;
+    left: 105px;
+    text-decoration: none;
+    padding: 13px 40px;
+    color: var(--background--color);
+    background-color: var(--text--color);
+    border: 1px solid red;
+    border-radius: 10px;
+}
+.content_box2 a:hover {
+    background-color: var(--background--color--hover);
+    color: var(--text--color);
+    transition: all 0.2s;
+}
+.content_box3 {
+    background-image: url(https://caodangvietmyhanoi.edu.vn/images/products/cat/resized/tuyen-sinh-cao-dang-chinh-quy-cao-dang-viet-my_1651115971.jpg);
+    background-size: cover;
+}
+.content_box3 a {
+    position: absolute;
+    bottom: 2px;
+    left: 95px;
+    text-decoration: none;
+    padding: 13px 40px;
+    color: var(--background--color);
+    background-color: var(--text--color);
+    border: 1px solid red;
+    border-radius: 10px;
+}
+.content_box3 a:hover {
+    background-color: var(--background--color--hover);
+    color: var(--text--color);
+    transition: all 0.2s;
+}
+.tintuc_sukien {
+    display: flex;
+    justify-content: space-between;
+}
+.tintuc1 img,
+.tintuc2 img,
+.tintuc3 img,
+.tintuc4 img {
+    border-radius: 5px;
+    width: 310px;
+}
+.content_tintuc1 {
+    width: 310px;
+    font-size: 15.5px;
+    font-weight: 700;
+}
+.content_tintuc1:hover {
+    color: var(--background--color--hover);
+    transition: all ease 0.5s;
+}
+.text_content {
+    width: 310px;
+    font-size: 0.9rem;
+    margin-top: 10px;
+}
+.link_tintuc {
+    text-decoration: none;
+    color: var(--text--color--hover);
+}
+.footer {
+    border: var(--test--border);
+    background-color: rgb(96, 85, 248);
+    grid-area: footer;
+}
+hr::after {
+    content: "";
+    display: block;
+    height: 2px;
+    width: 100px;
+    background-color: #ff002b;
+}
+@media (max-width: 430px) {
+    .nav .nav_menu {
+        display: none;
+    }
+    .header_items-follows {
+        display: none;
+    }
+    
+}

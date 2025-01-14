@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="shortcut icon" href="https://caodangvietmyhanoi.edu.vn/images/config/logo-cao-dang-viet-my-07_1671158415.png.webp" type="image/x-icon">
+    <!-- css và bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="./asset/bootstrap/css/bootstrap.css">
+    <!-- <link rel="stylesheet" href="./style.css"> -->
+    <!-- font google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <title>Trường Cao Đẳng Việt Mỹ - Hà Nội</title>
+    <style>
+        :root {
+        /* --test--border: 1px solid red; */
+        --text--color: #fff;
+        --background--color: #DB1E3F; /* màu chủ đạo của trang web "#DB1E3F" */ /* đổi mã màu để xem kết quả*/
+        --background--color--hover: #ff4f4f; /* màu khi hover vào nút bất và bất cứ thứ gì mình hover chuột vào "#ff4f4f" */
+        --text--color--hover: #333;
+        }
+        .bx:hover {
+            cursor: pointer;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+        body {
+            user-select: none;
+        }
+        .container {
+            padding: 0;
+            border: var(--test--border);
+            width: 100%;
+            height: 100%;
+            display: grid;
+            gap: 0px;       
+            grid-template-columns: 1fr;
+            grid-template-rows: 30px 0.4fr 0.8fr 52rem 27.6rem 10.9rem;
+            grid-template-areas: "header header header"
+                                "nav nav nav"
+                                "banner banner banner"
+                                "content content content"
+                                "sidebar sidebar sidebar"
+                                "footer footer footer";
+        }
+        /* header start */
+
+        .header {
+            border: var(--test--border);
+            background-color: var(--background--color);
+            color: var(--text--color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 40px;
+            grid-area: header;
+        }
+        .item_follows {
+            display: flex;
+            float: right
+        }
+        .item_follows i {
+            padding: 0 5px;
+            vertical-align: middle;
+        }
+        /* header end */
+
+        /* nav start */
+        .nav {
+            width: 100%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between; 
+            border: var(--test--border);
+            grid-area: nav;
+            z-index: 1;
+        }
+        .nav .image_nav {
+            display: flex;
+            align-items: center;
+            width: auto;
+            border: var(--test--border);
+        }
+        .nav .nav_menu {
+            width: auto;
+            display: flex;
+            align-items: center;
+            border: var(--test--border);
+        }
+
+
+        /* Hình ảnh */
+        .nav .image_nav img {
+            width: 150px;
+        }
+        /* /// */
+
+        .nav .nav_menu .nav_list {
+            border: var(--test--border);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+        }
+        .nav .nav_menu .nav_list li {
+            list-style: none;
+            padding: 12px;
+            border-bottom: 1px solid #fff;  
+        }
+
+        .nav .nav_menu .nav_list li a {
+            text-decoration: none;
+            color: #3a2e2e;
+            text-transform: uppercase;
+        }
+        .nav .nav_menu .nav_list li:hover {
+            border-bottom: 1px solid var(--background--color--hover);
+        }
+
+        /* drop menu gioi thieu - start*/
+        .gioithieu {
+            position: relative;
+        }
+        .drop_menu-gioithieu {
+            display: none;
+            position: absolute;
+            top: 50px;
+            left: 0;
+            width: 260px;
+            background-color: #fff;
+            box-shadow: 5px 5px 10px #333;
+            border-radius: 5px;
+            padding: 5px 0;
+        }
+        .gioithieu:hover .drop_menu-gioithieu {
+            display: block;
+        }
+        .drop_menu-gioithieu li:hover {
+            border-left: 4px solid var(--background--color--hover);
+        }
+        /* drop menu gioi thieu - end*/
+
+        /* drop menu cao dang chinh quy - start*/
+        .caodangchinhquy {
+            position: relative;
+        }
+        .drop_menu-cdchinhquy {
+            display: none;
+            position: absolute;
+            top: 50px;
+            left: 0;
+            width: 260px;
+            background-color: #fff;
+            box-shadow: 5px 5px 10px #333;
+            border-radius: 5px;
+            padding: 5px 0;
+        }
+        .caodangchinhquy:hover .drop_menu-cdchinhquy {
+            display: block;
+        }
+        .drop_menu-cdchinhquy li:hover {
+            border-left: 4px solid var(--background--color--hover);
+        }
+        /* drop menu cao dang chinh quy - end */
+
+        /* drop menu cao dang 9+ - start */
+        .caodang9 {
+            position: relative;
+        }
+        .drop_menu-caodang9 {
+            display: none;
+            position: absolute;
+            top: 50px;
+            left: 0;
+            width: 290px;
+            background-color: #fff;
+            box-shadow: 5px 5px 10px #333;
+            border-radius: 5px;
+            padding: 5px 0;
+        }
+        .caodang9:hover .drop_menu-caodang9 {
+            display: block;
+        }
+        .drop_menu-caodang9 li:hover {
+            border-left: 4px solid var(--background--color--hover);
+        }
+        /* drop menu cao dang 9+ - end */
+
+        /* drop menu chuyen nganh - start */
+        .chuyennganh {
+            position: relative;
+        }
+        .drop_menu-chuyennganh {
+            display: none;
+            position: absolute;
+            top: 50px;
+            left: 0;
+            width: 260px;
+            background-color: #fff;
+            box-shadow: 5px 5px 10px #333;
+            border-radius: 5px;
+            padding: 5px 0;
+        }
+        .chuyennganh:hover .drop_menu-chuyennganh {
+            display: block;
+        }
+        .drop_menu-chuyennganh li:hover {
+            border-left: 4px solid var(--background--color--hover);
+        }
+        /* drop menu chuyen nganh - end */
+
+        .input {
+            padding: 5px;
+            padding-left: 10px;
+            border-radius: 20px;
+        }
+        .btnn {         /* nút đăng ký */
+            background-color: var(--background--color);
+            margin: 0px 20px;
+            border-radius: 10px;
+            border: none;
+            padding: 7px 30px;
+            color: var(--text--color);
+        }
+        .btnn:hover {
+            background-color: var(--background--color--hover);
+            color: var(--text--color--hover);
+        }
+        /* nav end */
+
+        /* banner start */
+        .banner {
+            border: var(--test--border);
+            grid-area: banner;
+            position: relative;
+        }
+        .banner img {
+            width: 100%;
+        }
+        .banner p {
+            font-family: 'Arial Narrow Bold';
+            color: var(--background--color);
+            font-size: 2.6rem;
+            font-weight: 700;
+            position: absolute;
+            top: 140px;
+            left: 90px;
+        }
+        .banner .span_banner {
+            font-family: 'Great Vibes', cursive;
+            color: #082a5e;
+            font-size: 2.5rem;
+            position: absolute;
+            top: 200px;
+            left: 95px;
+        }
+        .banner_dangkyngay-a {
+            background-color: var(--background--color);
+            box-shadow: 2px 4px 10px grey;
+            border-radius: 10px;
+            color: var(--text--color);
+            text-decoration: none;
+            padding: 10px;
+            position: absolute;
+            top: 380px;
+            left: 100px;
+        }
+        .banner_dangkyngay-a i {
+            vertical-align: middle;
+        }
+        .banner_dangkyngay-a:hover {
+            background-color: var(--background--color--hover);
+            color: #333;
+        }
+        /* banner end */
+
+        /* main start */
+        .main {
+            position: relative;
+            border: var(--test--border);
+            grid-area: content;
+        }
+        .content {
+            margin-bottom: 80px;
+        }
+        .main .content span {
+            font-size: 1.5rem;
+            font-weight: bold;
+            font-family: 'Arial Narrow Bold';
+        }
+        .content_box {
+            display: flex;
+            justify-content: space-between;
+        }
+        .content_box1, .content_box2, .content_box3 {
+            position: relative;
+            border: var(--test--border);
+            border-radius: 10px;
+            width: 33%;
+            height: 280px;
+        }
+        .content_box1 {
+            background-image: url(https://caodangvietmyhanoi.edu.vn/images/products/cat/resized/cao-dang-chinh-quy-cao-dang-viet-my-3-_1652781844.jpg);
+            background-size: cover;
+        }
+        .content_box1 a {
+            position: absolute;
+            bottom: 2px;
+            left: 93px;
+            text-decoration: none;
+            padding: 13px 40px;
+            color: var(--background--color);
+            background-color: var(--text--color);
+            border: 1px solid red;
+            border-radius: 10px;
+        }
+        .content_box1 a:hover {
+            background-color: var(--background--color--hover);
+            color: var(--text--color);
+            transition: all 0.2s;
+        }
+        .content_box2 {
+            background-image: url(https://caodangvietmyhanoi.edu.vn/images/products/cat/resized/1_1649751685.jpg);
+            background-size: cover;
+        }
+        .content_box2 a {
+            position: absolute;
+            bottom: 2px;
+            left: 105px;
+            text-decoration: none;
+            padding: 13px 40px;
+            color: var(--background--color);
+            background-color: var(--text--color);
+            border: 1px solid red;
+            border-radius: 10px;
+        }
+        .content_box2 a:hover {
+            background-color: var(--background--color--hover);
+            color: var(--text--color);
+            transition: all 0.2s;
+        }
+        .content_box3 {
+            background-image: url(https://caodangvietmyhanoi.edu.vn/images/products/cat/resized/tuyen-sinh-cao-dang-chinh-quy-cao-dang-viet-my_1651115971.jpg);
+            background-size: cover;
+        }
+        .content_box3 a {
+            position: absolute;
+            bottom: 2px;
+            left: 95px;
+            text-decoration: none;
+            padding: 13px 40px;
+            color: var(--background--color);
+            background-color: var(--text--color);
+            border: 1px solid red;
+            border-radius: 10px;
+        }
+        .content_box3 a:hover {
+            background-color: var(--background--color--hover);
+            color: var(--text--color);
+            transition: all 0.2s;
+        }
+        .tintuc_sukien {
+            display: flex;
+            justify-content: space-between;
+        }
+        .tintuc1 img,
+        .tintuc2 img,
+        .tintuc3 img,
+        .tintuc4 img {
+            border-radius: 5px;
+            width: 310px;
+        }
+        .content_tintuc1 {
+            width: 310px;
+            font-size: 15.5px;
+            font-weight: 700;
+        }
+        .content_tintuc1:hover {
+            color: var(--background--color--hover);
+            transition: all ease 0.5s;
+        }
+        .text_content {
+            width: 310px;
+            font-size: 0.9rem;
+            margin-top: 10px;
+        }
+        .link_tintuc {
+            text-decoration: none;
+            color: var(--text--color--hover);
+        }
+        .lazy_form_sign-up img {
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+        }
+        /* main end */
+
+        /* sidebar start */
+        .sidebar {
+            position: relative;
+        }
+        .sidebar img {
+            width: 100%;
+            border: var(--test--border);
+            grid-area: sidebar;
+        }
+        .sidebar_up {
+            width: 100%;
+            display: flex;
+            justify-content: space-evenly;
+            position: absolute;
+            top: 5%;
+            text-align: center;
+        }
+        .sidebar_box1 h1 {
+            color: #DB1E3F;
+            font-size: 3.5rem;
+        }
+        .sidebar_box1 p {
+            color: var(--text--color);
+        }
+        .sidebar_down {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            position: absolute;
+            bottom: 10%;
+            left: 33%;
+        }
+        .sidebar_down h1 {
+            color: var(--text--color);
+            font-weight: 200;
+        }
+        .input_dangky {
+            display: flex;
+            width: 180%;  
+        }
+        .input_dangky input {
+            margin: 5px ;
+        }
+        .input_dangky button {
+            width: 100%;
+            margin: 5px;
+        }
+        .footer {
+            height: 18.2rem;
+            border: var(--test--border);
+            grid-area: footer;
+            position: relative;
+        }
+        .footer .footer_img { 
+            width: 100%;
+            height: 18.3rem;
+        }
+        .footer_content {
+            width: 100%;
+            display: flex;
+            justify-content: space-evenly;
+            position: absolute;
+            top: 10%;
+        }
+        hr::after {
+            content: "";
+            display: block;
+            height: 2px;
+            width: 10%;
+            background-color: #ff002b;
+        }
+                                        /* web này đéo dành cho trẻ em dưới 1400px -- trẻ em không đủ 1400px trở lên không được phép dùng =)))))))) */
+        @media (max-width: 1399px) {
+            * {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- header start-->
+
+        <header class="header">
+        <span>Cao đẳng Việt Mỹ Hà Nội - Thành viên của tổ chức giáo dục EQuest</span>
+        <span class="header_items-follows">Theo dõi:
+            <div class="item_follows">
+                <a href="https://www.facebook.com/huubang.2703/" target="_blank" class="facebook" title="huubang.2703"><i class='bx bxl-facebook-square bx-sm' style='color:#ffffff'></i></a>
+                <a href="https://www.tiktok.com/@pengpeng_106" target="_blank" class="tiktok" title="@pengpeng_106"><i class='bx bxl-tiktok bx-sm' style='color:#ffffff' ></i></a>
+                <a href="https://www.youtube.com/@LazyKen206" target="_blank" class="youtube" title="@LazyKen206"><i class='bx bxl-youtube bx-sm' style='color:#ffffff'  ></i></a>
+            </div>
+        </span>
+        </header>
+
+        <!-- header end -->
+
+        <!-- nav start -->
+
+        <nav class="row nav">
+        <div class="image_nav row-md-4">
+            <a href="./index.html"><img src="https://caodangvietmyhanoi.edu.vn/images/config/logo-cao-dang-viet-my-07_1671158415.png.webp" title="Trang chủ"></a>
+        </div>
+        <div class="nav_menu row-md-8">
+            <ul class="nav_list">
+                <li class="gioithieu">
+                    <a href="#">giới thiệu
+                        <i class='bx bx-chevron-down' undefined ></i>
+                        <ul class="drop_menu-gioithieu">
+                            <li><a href="https://caodangvietmyhanoi.edu.vn/ve-to-chuc-giao-duc-equest-ct11117.html" target="_blank">Tập Đoàn Giáo Dục EQuest</a></li>
+                            <li><a href="https://caodangvietmyhanoi.edu.vn/ve-chung-toi-ct171.html" target="_blank">Cao Đẳng Việt Mỹ - Hà Nội</a></li>
+                            <li><a href="https://caodangvietmyhanoi.edu.vn/ban-giam-hieu-truong-cao-dang-viet-my-ha-noi-ct607.html" target="_blank">Ban Giám Hiệu</a></li>
+                            <li><a href="https://caodangvietmyhanoi.edu.vn/co-so-vat-chat-tai-cao-dang-viet-my-ha-noi-n20309.html" target="_blank">Cơ Sở Vật Chất</a></li>
+                            <li><a href="https://caodangvietmyhanoi.edu.vn/co-so-vat-chat-tai-cao-dang-viet-my-ha-noi-n20309.html" target="_blank">Đội Ngũ Giảng Viên</a></li>
+                        </ul>
+                    </a>
+                </li>
+                <li class="caodangchinhquy">
+                    <a href="https://caodangvietmyhanoi.edu.vn/dang-ky-hoc-cao-dang-chinh-quy-2024-rs4.html" target="_blank">CĐ chính quy
+                        <i class='bx bx-chevron-down' undefined ></i>
+                        <ul class="drop_menu-cdchinhquy">
+                            <li><a href="https://caodangvietmyhanoi.edu.vn/cao-dang-chinh-quy-pc5.html" target="_blank">Các Ngành Đào Tạo</a></li>
+                            <li><a href="https://caodangvietmyhanoi.edu.vn/hoc-phi-ct808.html" target="_blank">Học Phí</a></li>
+                            <li><a href="https://caodangvietmyhanoi.edu.vn/huong-dan-nhap-hoc-ct10686.html" target="">Hướng Dẫn Nhập Học</a></li>
+                            <li><a href="https://caodangvietmyhanoi.edu.vn/hoi-dap-tuyen-sinh-ct351.html" target="_blank">Câu Hỏi Thường Gặp</a></li>
+                            <li><a href="https://caodangvietmyhanoi.edu.vn/dang-ky-xet-tuyen.html" target="_blank">Nộp Hồ Sơ Trực Tuyến</a></li>
+                            <li><a href="#">Liên Thông - Chuyển Tiếp ĐH</a></li>
+                        </ul>
+                    </a>
+                </li>
+                <li class="caodang9">
+                    <a href="https://caodangvietmyhanoi.edu.vn/dang-ky-hoc-cao-dang-9--rs1.html" target="_blank">cao đẳng 9+
+                        <i class='bx bx-chevron-down' undefined ></i>
+                        <ul class="drop_menu-caodang9">
+                            <li><a href="https://caodangvietmyhanoi.edu.vn/thong-tin-tuyen-sinh-he-pho-thong-cao-dang-9-viet-my-ha-noi-ct14587.html" target="_blank">Thông Tin Tuyển Sinh</a></li>
+                            <li><a href="https://caodangvietmyhanoi.edu.vn/cao-dang-he-9-pc1.html" target="_blank">Các Ngành Đào Tạo 9+</a></li>
+                            <li><a href="https://caodangvietmyhanoi.edu.vn/huong-dan-nhap-hoc-tai-cao-dang-viet-my-ha-noi-ct10686.html" target="_blank">Hướng Dẫn Nhập Học</a></li>
+                            <li><a href="https://caodangvietmyhanoi.edu.vn/hoi-dap-tuyen-sinh-2022-ct351.html" target="_blank">Câu Hỏi Thường Gặp</a></li>
+                            <li><a href="https://caodangvietmyhanoi.edu.vn/dang-ky-hoc-cao-dang-9--rs1.html" target="_blank">Nộp Hồ Sơ Trực Tuyến</a></li>
+                            <li><a href="https://caodangvietmyhanoi.edu.vn/lien-thong-dai-hoc-pc4.html" target="_blank">Liên Thông Cao Đẳng- Đại Học</a></li>
+                            <li><a href="https://caodangvietmyhanoi.edu.vn/https-caodangvietmyhanoi-edu-vn-cong-khai-cam-ket-chat-luong-giao-duc-ct14581.html" target="_blank">Công Khai Cam Kết Chất Lượng Giáo Dục</a></li>
+                        </ul>
+                    </a>
+                </li>
+                <li class="chuyennganh">
+                    <a href="#">chuyên ngành
+                        <i class='bx bx-chevron-down' undefined ></i>
+                        <ul class="drop_menu-chuyennganh">
+                            <li><a href="https://caodangvietmyhanoi.edu.vn/chuyen-nganh-cntt-ung-dung-phan-mem-ld3.html" target="_blank">Công Nghệ Thông Tin</a></li>
+                            <li><a href="https://caodangvietmyhanoi.edu.vn/chuyen-nganh-cong-nghe-ky-thuat-o-to-ld16.html" target="_blank">Công Nghệ Ô-tô</a></li>
+                            <li><a href="https://caodangvietmyhanoi.edu.vn/chuyen-nganh-tieng-trung-ld12.html" target="_blank">Ngôn Ngữ Tiếng Trung</a></li>
+                            <li><a href="https://caodangvietmyhanoi.edu.vn/chuyen-nganh-tieng-han-ld10.html" target="_blank">Ngôn Ngữ Tiếng Hàn</a></li>
+                        </ul>
+                    </a>
+                </li>
+                <li><a href="https://caodangvietmyhanoi.edu.vn/tin-tuc-su-kien-kn31.html" target="_blank">tin tức</a></li>
+                <div class="input">
+                    <label for="search" name="search" id="search"></label>
+                    <input class="input" placeholder="Tìm kiếm . . ."></input>
+                </div>
+                <button class="btnn">Đăng ký</button>   
+            </ul>
+        </div>
+        </nav>
+
+        <!-- nav end -->
+
+        <!-- banner start -->
+
+        <div class="banner">
+        <img src="https://caodangvietmyhanoi.edu.vn/images/slideshow/2024/10/03/compress/nh-web-30-11-02_1727926857.png" title="Banner_Cao Đẳng Việt Mỹ - Hà Nội">
+        <span class="span_banner">Mở đợt xét tuyển sớm năm 2025</span>
+        <p>CAO ĐẲNG VIỆT MỸ HÀ NỘI</p>
+        <a href="#" class="banner_dangkyngay-a">ĐĂNG KÝ NGAY
+            <i class='bx bx-right-arrow-alt bx-sm' ></i>
+        </a>
+        </div>
+
+        <!-- banner end -->
+     
+        <!-- main start -->
+
+    
+        <main class="main">
+            <div class="content">
+                    <span class="text_content">ĐANG TUYỂN SINH</span>
+                    <hr>
+                <div class="content_box">
+                    <div class="content_box1">
+                        <a href="https://caodangvietmyhanoi.edu.vn/cao-dang-chinh-quy-pc5.html" target="_blank">Cao Đẳng Chính Quy</a>
+                    </div>
+                    <div class="content_box2">
+                        <a href="https://caodangvietmyhanoi.edu.vn/cao-dang-he-9-pc1.html" target="_blank">Cao Đẳng Hệ 9+</a>
+                    </div>
+                    <div class="content_box3">
+                        <a href="">Liên Thông Đại Học</a>
+                    </div>
+                </div>
+            </div>
+            <div class="content">
+                    <span class="text_content">TIN TỨC - SỰ KIỆN</span>
+                    <hr>
+                <div class="tintuc_sukien">
+                    <a href="https://caodangvietmyhanoi.edu.vn/hoi-thao-hoc-cao-dang-pho-thong-9-con-duong-thanh-cong-som-n23588.html" class="link_tintuc" target="_blank">
+                        <div class="tintuc1">
+                            <img src="https://caodangvietmyhanoi.edu.vn/images/news/2024/12/26/resized/mail-co%CC%9B-so%CC%9B%CC%89-mo%CC%9B%CC%81i-07_1735194637.png.webp" alt="">
+                            <div class="content_tintuc1">
+                                HỘI THẢO: HỌC CAO ĐẲNG PHỔ THÔNG 9+ - CON ĐƯỜNG THÀNH CÔNG SỚM
+                            </div>
+                            <div class="text_content">
+                                Con đường dẫn đến sự nghiệp bền vững có thể bắt đầu ngay từ khi con 15 tuổi. Với chương trình Cao đẳng Phổ thông, học sinh lớp 9...
+                            </div>
+                        </div>
+                    </a>
+                    <a href="https://caodangvietmyhanoi.edu.vn/-co-so-moi-noi-nhung-giac-mo-truong-thanh-cung-hanh-trinh-tuong-lai--n23587.html" class="link_tintuc" target="_blank">
+                        <div class="tintuc2">
+                            <img src="https://caodangvietmyhanoi.edu.vn/images/news/2024/12/23/resized/corona_camera001_0000-copy_1734941404.jpg" alt="">
+                            <div class="content_tintuc1">
+                                "Cơ sở mới – Nơi những giấc mơ trưởng thành cùng hành trình tương lai"
+                            </div>
+                            <div class="text_content">
+                                Khi nói về một ngôi trường, người ta thường nghĩ đến những tòa nhà khang trang, những phòng học tiện nghi hay những...
+                            </div>
+                        </div>
+                    </a>
+                    <a href="https://caodangvietmyhanoi.edu.vn/ky-kien-tap-dang-cap-5-sao-cua-sinh-vien-quan-tri-khach-san-k24-tai-khach-san-pan-pacific-ha-noi-n23586.html" class="link_tintuc" target="_blank">
+                        <div class="tintuc3">
+                            <img src="https://caodangvietmyhanoi.edu.vn/images/news/2024/12/17/resized/1-08_1734421759.jpg" alt="">
+                            <div class="content_tintuc1">
+                                KỲ KIẾN TẬP  ĐẲNG CẤP 5 SAO CỦA SINH VIÊN QUẢN TRỊ KHÁCH SẠN K24 TẠI...
+                            </div>
+                            <div class="text_content">
+                                Ngày 16/12, sinh viên K24 Quản trị Khách sạn đã có cơ hội tham gia buổi kiến tập thực tế tại Khách sạn Pan...
+                            </div>
+                        </div>
+                    </a>
+                    <a href="https://caodangvietmyhanoi.edu.vn/niem-tu-hao-viet-my-ha-noi-sinh-vien-khoa-quan-tri-doanh-nghiep-lot-vao-vong-chung-ket-cuoc-thi-tuoi-tre-mien-trung-sang-tao-xanh-2024-n23585.html" class="link_tintuc" target="_blank">
+                        <div class="tintuc4">
+                            <img src="https://caodangvietmyhanoi.edu.vn/images/news/2024/12/16/resized/470190110_122180471588114264_6544328359474758711_n_1734333258.jpg" alt="">
+                            <div class="content_tintuc1">
+                                NIỀM TỰ HÀO VIỆT MỸ HÀ NỘI: SINH VIÊN KHOA QUẢN TRỊ DOANH NGHIỆP...
+                            </div>
+                            <div class="text_content">
+                                Vượt qua hàng trăm đội thi, với đề tài “Kinh doanh tái sử dụng (làm sạch) khí F-Gas, bảo vệ môi trường...
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </main>
+        <div class="sidebar">
+            <img src="https://caodangvietmyhanoi.edu.vn/images/config/back_form_1649062626.jpg.webp" title="sidebar">
+            <div class="sidebar_up">
+                <div class="sidebar_box1">
+                    <h1>15</h1>
+                    <p>Năm xây dựng và phát triển</p>
+                </div>
+                <div class="sidebar_box1">
+                    <h1>15.000</h1>
+                    <p>Sinh viên</p>
+                </div>
+                <div class="sidebar_box1">
+                    <h1>70%</h1>
+                    <p>Thời lượng học là thực hành</p>
+                </div>
+                <div class="sidebar_box1">
+                    <h1>8</h1>
+                    <p>Lương khởi điểm ra trường 8m/tháng</p>
+                </div>
+            </div>
+            <div class="sidebar_down">
+                <h1>FORM ĐĂNG KÝ HỌC</h1>
+                <div class="input_dangky">
+                    <input type="text" class="form-control" placeholder="Họ và tên*: ">
+                    <input type="text" class="form-control" placeholder="Số Điện Thoại*: ">
+                </div>
+                <div class="input_dangky">
+                    <input type="text" class="form-control" placeholder="Email*: ">
+                    <input type="text" class="form-control" placeholder="Địa Chỉ: ">
+                </div>
+                <div class="input_dangky">
+                    <input type="text" class="form-control" placeholder="Ngành Học Muốn Đăng Ký*: ">
+                </div>
+                <div class="input_dangky">
+                    <button type="button" class="btn btn-danger">ĐĂNG KÝ</button>
+                </div>
+            </div>
+        </div>
+            <!-- main end -->
+
+                <!-- footer start -->
+
+            <footer class="footer">
+                <img src="https://caodangvietmyhanoi.edu.vn/images/config/footer_back_1649069803.jpg.webp" title="footer" class="footer_img">
+                <div class="footer_content">
+                    <div class="item_footer1">
+                        <h4 style="color: var(--text--color); font-weight: 100; margin-bottom: 20px;">CAO ĐẲNG VIỆT MỸ HÀ NỘI</h4>
+                        <div class="footer_content_down">
+                            <h5 style="color: var(--text--color);">TRỤ SỞ HÀ NỘI</h5>
+                            <div class="icon_text" style="display: flex;">
+                                <i class='bx bxs-business bx-sm' style='color:#ffffff'></i>
+                                <p style="margin: 0 10px; color: var(--text--color);" >Tòa nhà AMDI Group, Số 1 phố Trịnh Văn Bô,<br> Phường Phương Canh, Q. Nam Từ Liêm, TP. Hà<br> Nội</p>
+                            </div>
+                            <div class="icon_text" style="display: flex; align-items: center;">
+                                <i class='bx bxs-phone bx-sm' style='color:#ffffff' ></i>
+                                <p style="margin: 10px 10px; color: var(--text--color);" >0388 648 466</p>
+                            </div>
+                            <div class="icon_text" style="display: flex; align-items: center;">
+                                <i class='bx bxs-envelope bx-sm' style='color:#ffffff' ></i>
+                                <p style="margin: 0px 10px; color: var(--text--color);" >bang12420027@caodangvietmyhanoi.edu.vn</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item_footer2">
+                        <h4 style="color: var(--text--color); font-weight: 100; margin-bottom: 20px;">CHƯƠNG TRÌNH ĐÀO TẠO</h4>
+                        <div class="icon_text" style="display: flex;">
+                            <i class='bx bxs-right-arrow-circle bx-sm' style='color:#ffffff' ></i>
+                            <a style="margin: 0px 10px; color: var(--text--color); text-decoration: none; cursor: pointer;" title="Cao đẳng chính quy" href="https://caodangvietmyhanoi.edu.vn/cao-dang-chinh-quy-pc5.html" target="_blank">Cao đẳng chính quy</a>
+                        </div>
+                        <div class="icon_text" style="display: flex; margin: 10px 0;">
+                            <i class='bx bxs-right-arrow-circle bx-sm' style='color:#ffffff' ></i>
+                            <a style="margin: 0px 10px; color: var(--text--color); text-decoration: none; cursor: pointer;" title="Cao đẳng 9+" href="https://caodangvietmyhanoi.edu.vn/cao-dang-he-9-pc1.html" target="_blank">Cao đẳng 9+</a>
+                        </div>
+                    </div>
+                    <div class="item_footer3">
+                        <h4 style="color: var(--text--color); font-weight: 100; margin-bottom: 20px;">KẾT NỐI</h4>
+                        <a href="https://www.facebook.com/huubang.2703/" target="_blank" class="facebook" title="huubang.2703"><i class='bx bxl-facebook-square bx-md' style='color:#ffffff'></i></a>
+                        <a href="https://www.tiktok.com/@pengpeng_106" target="_blank" class="tiktok" title="@pengpeng_106" style="margin: 0 10px;"><i class='bx bxl-tiktok bx-md' style='color:#ffffff' ></i></a>
+                        <a href="https://www.youtube.com/@LazyKen206" target="_blank" class="youtube" title="@LazyKen206"><i class='bx bxl-youtube bx-md' style='color:#ffffff'  ></i></a>
+                    </div>
+                </div>  
+            </footer>
+                <!-- footer end -->
+    </div>
+</body>
+</html>
